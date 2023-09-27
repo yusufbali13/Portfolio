@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="nav">
+    <nav className="nav ">
       <ul className="nav__list">
         <Disclosure as="nav" className="">
           {({ open }) => (
@@ -37,8 +37,8 @@ const Navbar = () => {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className="hidden sm:block">
-                    <div className="flex space-x-4">
+                  <div className="hidden sm:block m-auto">
+                    <div className="flex space-x-6">
                       {navigation.map((item) => (
                         <NavLink
                           key={item.name}
@@ -46,7 +46,7 @@ const Navbar = () => {
                           className={`${
                             item.current
                               ? "bg-gray-900 text-white"
-                              : "text-white"
+                              : "text-white text-xl"
                           } block rounded-md px-3 py-2 text-base font-medium`}
                           aria-current={item.current ? "page" : undefined}
                           activeClassName="active"
