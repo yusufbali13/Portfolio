@@ -2,7 +2,8 @@
 @import "../../scss/mixins";
 
 .project-bgImg-container {
-  margin-top: 40vh;
+  z-index: -1;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

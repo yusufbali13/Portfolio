@@ -73,7 +73,7 @@ h3 {
     }
   }
   .about-bgImg-container {
-    margin-top: 30vh;
+    margin-top: 15vh;
   }
   .about__bio-image {
     p {
@@ -111,6 +111,9 @@ h3 {
     width: 100%;
   }
 }
+.project-bgImg-container {
+  margin-top: 20vh;
+}
 
 @include media-lg {
   .nav {
@@ -128,6 +131,9 @@ h3 {
   .contact__list {
     flex-direction: row;
   }
+}
+
+.project-bgImg-container {
 }
 
 @include media-xl {
