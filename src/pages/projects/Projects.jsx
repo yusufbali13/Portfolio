@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import "./Projects.scss";
-// import ProjectCards from "../../components/ProjectCards";
+
 const ProjectCards = lazy(() => import("../../components/ProjectCards"));
 const Projects = () => {
   return (
@@ -22,4 +22,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
