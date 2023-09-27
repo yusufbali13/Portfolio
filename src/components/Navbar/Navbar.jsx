@@ -2,20 +2,19 @@ import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Fragment } from "react";
-
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "About", current: false },
-  { name: "Projects", href: "Projects", current: false },
-  { name: "Contact", href: "Contacts", current: false },
-];
 
 const Navbar = () => {
+  const navigation = [
+    { name: "Home", href: "/", current: false },
+    { name: "About", href: "About", current: false },
+    { name: "Projects", href: "Projects", current: false },
+    { name: "Contact", href: "Contacts", current: false },
+  ];
+
   return (
     <nav className="nav">
       <ul className="nav__list">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -47,9 +46,10 @@ const Navbar = () => {
                           className={`${
                             item.current
                               ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                          } rounded-md px-3 py-2 text-sm font-medium`}
+                              : "text-white"
+                          } block rounded-md px-3 py-2 text-base font-medium`}
                           aria-current={item.current ? "page" : undefined}
+                          activeClassName="active"
                         >
                           {item.name}
                         </NavLink>
