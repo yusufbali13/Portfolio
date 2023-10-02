@@ -1,87 +1,78 @@
 import "./Navbar.scss";
-import { NavLink } from "react-router-dom";
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
-  const navigation = [
-    { name: "Home", href: "/", current: false },
-    { name: "About", href: "About", current: false },
-    { name: "Projects", href: "Projects", current: false },
-    { name: "Contact", href: "Contacts", current: false },
+import { Link } from "react-scroll";
+import About from "../../pages/about/About";
+
+const NavBar = () => {
+  const [nav, setNav] = useState(false);
+  const links = [
+    {
+      id: 1,
+      link: "Home",
+    },
+    {
+      id: 2,
+      link: "About",
+    },
+    {
+      id: 3,
+      link: "portfolio",
+    },
+    {
+      id: 4,
+      link: "Resume",
+    },
+    {
+      id: 5,
+      link: "contact",
+    },
   ];
-
   return (
-    <nav className="nav ">
-      <ul className="nav__list">
-        <Disclosure as="nav" className="">
-          {({ open }) => (
-            <>
-              <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="relative flex h-16 items-center justify-between">
-                  <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    {/* Mobile menu button*/}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </Disclosure.Button>
-                  </div>
-                  <div className="hidden sm:block m-auto">
-                    <div className="flex space-x-6">
-                      {navigation.map((item) => (
-                        <NavLink
-                          key={item.name}
-                          to={item.href}
-                          className={`${
-                            item.current
-                              ? "bg-gray-900 text-white"
-                              : "text-white text-xl"
-                          } block rounded-md px-3 py-2 text-base font-medium`}
-                          aria-current={item.current ? "page" : undefined}
-                          activeClassName="active"
-                        >
-                          {item.name}
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Disclosure.Panel className="sm:hidden">
-                <div className="space-y-1 px-2 pb-3 pt-2">
-                  {navigation.map((item) => (
-                    <NavLink
-                      key={item.name}
-                      to={item.href}
-                      className={`${
-                        item.current
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                      } block rounded-md px-3 py-2 text-base font-medium`}
-                      aria-current={item.current ? "page" : undefined}
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+    <div
+      id="navbar-bcg"
+      className="flex justify-center items-center w-full h-20 px-4 text-indigo-600  fixed nav"
+    >
+      <ul className="hidden md:flex">
+        {links.map(({ id, link }) => (
+          <li
+            key={id}
+            id="nav-color"
+            className=" nav-links px-5 cursor-pointer capitalize font-medium text-xl   text-white hover:scale-105 hover: duration-200 link-underline text-xl"
+          >
+            <Link to={link} smooth duration={500}>
+              {link}
+            </Link>
+          </li>
+        ))}
       </ul>
-    </nav>
+      <div
+        onClick={() => setNav(!nav)}
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+      >
+        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+      </div>
+      {nav && (
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-violet-700">
+          {links.map(({ id, link }) => (
+            <li
+              key={id}
+              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+            >
+              <Link
+                onClick={() => setNav(!nav)}
+                to={link}
+                smooth
+                duration={500}
+              >
+                {link}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
-
-export default Navbar;
+export default NavBar;
