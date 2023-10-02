@@ -2,7 +2,6 @@
 @import "../../scss/mixins";
 
 .nav {
-  // border: 2px solid red;
   height: 10vh;
   padding: 1rem;
 
@@ -19,7 +18,7 @@
     text-transform: uppercase;
     font-weight: 500;
     font-family: $font-family;
-    // transition: all 1s;
+
     @include transition(1s);
 
     &:hover {
@@ -31,6 +30,6 @@
   }
 }
 .active {
-  background-color: #ff5639;
+  background-color: #ed10f3;
   color: #ffffff;
 }
