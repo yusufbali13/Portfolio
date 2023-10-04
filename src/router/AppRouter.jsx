@@ -6,7 +6,7 @@ import Projects from "../pages/projects/Projects";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../components/Error/NotFound";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import Resume from "../pages/Resume/Resume";
+import Experience from "../pages/experience/Experience";
 
 const AppRouter = () => {
   return (
@@ -24,7 +24,7 @@ const AppRouter = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
