@@ -1,6 +1,5 @@
 import "./Contact.scss";
 
-//function for form reset
 function handleSubmit(e) {
   setTimeout(() => {
     e.target.reset();
@@ -36,7 +35,9 @@ const Contact = () => {
           <p className="text-4xl font-bold inline border-b-4 border-purple-500">
             Contact
           </p>
-          <p className="py-6">Submit the form below to get in touch with me</p>
+          <p className="py-6 font-bold ">
+            Submit the form below to get in touch with me
+          </p>
         </div>
 
         <div className=" flex justify-center items-center">
@@ -71,7 +72,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300"
+              className="text-white bg-gradient-to-b bg-purple-600 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300"
             >
               Send Message
             </button>
