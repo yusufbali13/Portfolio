@@ -1,6 +1,6 @@
 import React from "react";
 import "./NotFound.css";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const NotFound = () => {
   return (
     <section className="page_404">

@@ -1,6 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router/router";
-import "./App.scss"
+import "./App.scss";
 import AppRouter from "./router/AppRouter";
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
     //   router={router}
     //   fallbackElement={<div>Loading...</div>}
     // />// yeni versiyonla oluşturulmuş router yapısı
-    <AppRouter/> // eski versiyon
+    <AppRouter /> // eski versiyon
   );
 }
 

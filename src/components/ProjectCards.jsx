@@ -12,6 +12,6 @@ const ProjectCards = () => {
       })}
     </>
   );
-}
+};
 
-export default ProjectCards
+export default ProjectCards;

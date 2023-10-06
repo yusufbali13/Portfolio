@@ -1,5 +1,5 @@
 @import "../../scss/variables";
-@import "../../scss/mixins";
+// @import '../../scss/mixins';
 
 .about-bgImg-container {
   display: flex;
@@ -10,7 +10,7 @@
     h2 {
       margin-top: 1rem;
       font-size: 3rem;
-      color: $secondary-color;
+      color: #be6adf;
     }
 
     p {
@@ -25,13 +25,14 @@
   height: 90vh;
 
   &__container {
+    // border: 2px solid red;
     width: 70vw;
     margin: 2rem auto;
   }
 
   .about__job {
     margin: 1rem;
-    background-color: rgb(144, 49, 49);
+    background-color: rgba(255, 255, 255, 0.178);
     padding: 1rem;
     border-bottom: 5px solid $secondary-color;
 

@@ -1,35 +1,35 @@
-@import '../../scss/variables';
-@import '../../scss/mixins';
+@import "../../scss/variables";
+@import "../../scss/mixins";
 
-.contact-bgImg-container{
-    // @include bgImg(100vh, $main-bgImg-path);
+.contact {
+  // border:2px solid red;
+  height: 100vh;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
 
-}
+  h2 {
+    font-size: 4rem !important;
+    margin-bottom: 4rem !important;
+  }
 
-.contact{
-    // border:2px solid red;
-    height: 40vh;
-    margin-top: 20vh;
+  &__list {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1.8rem !important;
+    gap: 3.5rem 5rem;
+
     justify-content: center;
-    text-align: center;
-
-    h2{
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
-
-    &__list{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        font-size: 1.5rem;
-        gap: 2.5rem 2rem;
-        justify-content: center;
-        align-items: center;
-    }
-    .text-secondary{
-        color: $secondary-color;
-    }
+    align-items: center;
+  }
+  .text-secondary {
+    color: $secondary-color;
+  }
+  &__item {
+    line-height: 3rem;
+  }
 }

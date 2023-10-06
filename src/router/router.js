@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         <Footer />
       </>
     ),
-    errorElement: <NotFound/>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
