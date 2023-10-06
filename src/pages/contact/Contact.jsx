@@ -16,16 +16,16 @@ const Contact = () => {
           <div className="contact__list">
             <div className="contact__item">
               <i className="fas fa-envelope"></i> Email
-              <div className="text-secondary">emnplt_06@outlook.com</div>
+              <div style={{ color: "#be6adf" }}>baliyusuf675@gmail.com</div>
             </div>
             <div className="contact__item">
               <i className="fas fa-mobile-alt"></i> Phone
-              <div className="text-secondary">+90 555 555 55 55</div>
+              <div style={{ color: "#be6adf" }}>+90 555 555 55 55</div>
             </div>
             <div className="contact__item">
               <i className="fas fa-map-marker-alt"></i> Address
-              <div className="text-secondary">
-                Kaletepe Mahallesi 875. Sokak Yenimahalle/Ankara
+              <div style={{ color: "#be6adf" }}>
+                Fatih Mahallesi 1755. Sokak Bağcılar/İstanbul
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@ const Contact = () => {
       </div>
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          <p className="text-4xl font-bold inline border-b-4 border-purple-500">
             Contact
           </p>
           <p className="py-6">Submit the form below to get in touch with me</p>

@@ -8,16 +8,6 @@
   justify-content: center;
   text-align: center;
 
-  &__name {
-    font-size: 5rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #fff;
-    &--last {
-      color: red;
-      font-weight: 700;
-    }
-  }
   h1 {
     font-weight: 600;
   }
@@ -33,9 +23,4 @@
 
 .swiperSlide img {
   max-width: 250px;
-}
-@include media-xl {
-  .projects__item {
-    width: 33%;
-  }
 }
