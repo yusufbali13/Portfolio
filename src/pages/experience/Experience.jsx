@@ -1,104 +1,48 @@
-import html from "../../assets/img/html.png";
-import css from "../../assets/img/css.png";
-import javascript from "../../assets/img/javascript.png";
-import reactImage from "../../assets/img/react.png";
-import nextjs from "../../assets/img/nextjs.png";
-import github from "../../assets/img/github.png";
-import tailwind from "../../assets/img/tailwind.png";
-import redux from "../../assets/img/redux.png";
-import mui from "../../assets/img/mui.png";
-const Experience = () => {
-  const techs = [
-    {
-      id: 1,
-      src: html,
-      title: "HTML",
-      style: "shadow-orange-500",
-    },
-    {
-      id: 2,
-      src: css,
-      title: "CSS",
-      style: "shadow-blue-500",
-    },
-    {
-      id: 3,
-      src: javascript,
-      title: "JavaScript",
-      style: "shadow-yellow-500",
-    },
-    {
-      id: 4,
-      src: reactImage,
-      title: "React",
-      style: "shadow-blue-400",
-    },
+import React, { useEffect, useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import { BiDownload } from "react-icons/bi";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+function Resume() {
+  const [width, setWidth] = useState(1200);
 
-    {
-      id: 6,
-      src: nextjs,
-      title: "Next JS",
-      style: "shadow-white",
-    },
-
-    {
-      id: 8,
-      src: github,
-      title: "GitHub",
-      style: "shadow-gray-400",
-    },
-    {
-      id: 9,
-      src: tailwind,
-      title: "Tailwind",
-      style: "shadow-sky-400",
-    },
-
-    {
-      id: 9,
-      src: mui,
-      title: "Material UI",
-      style: "shadow-blue-500",
-    },
-
-    {
-      id: 12,
-      src: redux,
-      title: "Redux",
-      style: "shadow-purple-500",
-    },
-  ];
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
-    <div
-      name="experience"
-      className=" bg-gradient-to-b from-gray-800 to-black w-full h-screen experience"
-    >
-      <div className=" max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <div>
-          <p className="text-4xl font-bold border-b-4 border-purple-500 p-2 inline">
-            Experience
-          </p>
-          <p className="py-6">
-            These are the technologies I've worked with and used them in my
-            projects.
-          </p>
-        </div>
-
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          {techs.map(({ id, src, title, style }) => (
-            <div
-              key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
-            >
-              <img src={src} alt="" className="w-20 mx-auto" />
-              <p className="mt-4">{title}</p>
-            </div>
-          ))}
-        </div>
+    <div className="flex items-center justify-center flex-col relative">
+      <img
+        src="../../../Front End Resume V3.pdf"
+        alt=""
+        className="h-full w-full object-cover opacity-10 absolute bottom-0"
+      />
+      <a
+        href="../../../Front End Resume V3.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center z-20 justify-center gap-3 px-6 py-2 rounded  shadow-md text-white bg-purple-600 hover:bg-purple-700 transition duration-300 ease-in-out my-3"
+      >
+        <BiDownload fontSize={20} /> Download CV
+      </a>
+      <div className="py-[50px] justify-center flex items-center overflow-hidden z-20">
+        <Document
+          file="../../../Front End Resume V3.pdf"
+          className="flex justify-center shadow-xl"
+        >
+          <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+        </Document>
       </div>
+      <a
+        href="../../../Front End Resume V3.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center z-20 justify-center gap-3 px-6 py-2 rounded  shadow-md text-white bg-purple-600 hover:bg-purple-700 transition duration-300 ease-in-out my-3"
+      >
+        <BiDownload fontSize={20} /> Download CV
+      </a>
     </div>
   );
-};
+}
 
-export default Experience;
+export default Resume;
